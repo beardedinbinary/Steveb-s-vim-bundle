@@ -1,16 +1,32 @@
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"Turned off vi compatability
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nocompatible	"turns of vi compatiblity mode
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pathogen Settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-call pathogen#infect()
 call pathogen#runtime_append_all_bundles()
 call pathogen#helptags()
+call pathogen#infect()
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => Set filetype plug-in on-off
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+filetype on
+filetype plugin on
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" => No More Swap Files!!!!
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set nobackup
+set noswapfile
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some Basic user settings
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number          " show line numbers
 syntax on           " syntax highlighing
-set nocompatible	"turns of vi compatiblity mode
 
 
 " Set 20 lines to the curors - when moving vertical..
@@ -79,10 +95,6 @@ colorscheme solarized
 set background=dark
 
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Set filetype plug-in on-off
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-filetype on
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key Mappings to switch tabs (apple key + NUM)
