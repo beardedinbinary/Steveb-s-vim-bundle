@@ -7,3 +7,6 @@
 [submodule "bundle/nerdtree_plugin"]
 	path = bundle/nerdtree_plugin
 	url = git://github.com/vim-scripts/The-NERD-tree.git
+[submodule "bundle/snipmate"]
+	path = bundle/snipmate
+	url = git://github.com/msanders/snipmate.vim.git
