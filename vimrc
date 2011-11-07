@@ -43,7 +43,8 @@ set incsearch	"smarter search
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set smarttab
-set list listchars=tab:\ \ ,trail:·
+"set list listchars=tab:\ \ ,trail:
+
 
 set lbr
 set tw=500
@@ -79,22 +80,11 @@ nmap <silent> <c-n> :NERDTreeToggle<CR>
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
 
-"let NERDChristmasTree=1
-
-
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Conque Shell Config
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"nmap <c-t> :ConqueTerm bash --login<CR>
-
-
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Set Default Colorscheme
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme solarized
 set background=dark
-
-
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key Mappings to switch tabs (apple key + NUM)
@@ -132,7 +122,7 @@ map <C-h> <C-w><Left>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Smart Search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set ignorecase 
+set ignorecase
 set smartcase
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -145,3 +135,7 @@ nnoremap <C-y> 3<C-y>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set visualbell
 
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"  Fugitive git status line				      "
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
