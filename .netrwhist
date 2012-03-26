@@ -1,3 +1,5 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =1
-let g:netrw_dirhist_1='/Users/stevebalistreri/.vim'
+let g:netrw_dirhist_cnt =3
+let g:netrw_dirhist_1='/Users/stevebalistreri/Sites/career_builder/dev.gategormet.sayit-liveit.com/dev_code'
+let g:netrw_dirhist_2='/Users/stevebalistreri/Sites/dev.checgsa.sayit-liveit.com'
+let g:netrw_dirhist_3='/Users/stevebalistreri/Sites/career_builder/dev.gategormet.sayit-liveit.com/dev_code'
