@@ -1,11 +1,2 @@
 let g:netrw_dirhistmax  =10
-let g:netrw_dirhist_cnt =9
-let g:netrw_dirhist_1='/Users/stevebalistreri/Sites/career_builder/dev.gategormet.sayit-liveit.com/dev_code'
-let g:netrw_dirhist_2='/Users/stevebalistreri/Sites/dev.checgsa.sayit-liveit.com'
-let g:netrw_dirhist_3='/Users/stevebalistreri/Sites/career_builder/dev.gategormet.sayit-liveit.com/dev_code'
-let g:netrw_dirhist_4='/Users/stevebalistreri/Sites/dev.dohmentrip.sayit-liveit.com'
-let g:netrw_dirhist_5='/Users/stevebalistreri/.oh-my-zsh'
-let g:netrw_dirhist_6='/Users/stevebalistreri'
-let g:netrw_dirhist_7='/Users/stevebalistreri/Sites/dev.fbtest.sayit-liveit.com/orbisfb'
-let g:netrw_dirhist_8='/Users/stevebalistreri/Sites/dev.valleyfb2.sayit-liveit.com'
-let g:netrw_dirhist_9='/Users/stevebalistreri/Sites/HTML_EMAILS/cab/kcg'
+let g:netrw_dirhist_cnt =0

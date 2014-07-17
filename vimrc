@@ -1,38 +1,53 @@
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 "Turned off vi compatability
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nocompatible	"turns of vi compatiblity mode
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Pathogen Settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 call pathogen#runtime_append_all_bundles()
-call pathogen#helptags()
+cal pathogen#helptags()
 call pathogen#infect()
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Set filetype plug-in on-off
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 filetype on
 filetype plugin on
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => No More Swap Files!!!!
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set nobackup
 set noswapfile
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " Some Basic user settings
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set number          " show line numbers
 syntax on           " syntax highlighing
+set go-=L " Removes left hand scroll bar
+set guioptions-=r " Removes right hand scroll bar
+set mouse=a "enables mouse
+
+"mappings
+let mapleader = ","
+let g:mapleader = ","
+
+"autochange directory to match current file <Leader>cd
+nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
+
+
+" Fonts
+set guifont=Menlo\ Regular:h14 "font menlo size 14
+set tw=500
 
 
 " Set 20 lines to the curors - when moving vertical..
 set so=20
-
-
 set nostartofline   " don't jump to first character when paging
 set title           " show title in console title bar
 set ruler	        "Always show current position
@@ -44,10 +59,12 @@ set incsearch	"smarter search
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set smarttab
 "set list listchars=tab:\ \ ,trail:
+set tabstop=4
+set shiftwidth=4
 
 
+set copyindent "copies indentation
 set lbr
-set tw=500
 
 set ai "Auto indent
 set si "Smart indet
@@ -57,10 +74,6 @@ set wrap "Wrap lines
 map <right> :bn<cr>
 map <left> :bp<cr>
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-" => Omni complete functions
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-autocmd FileType css set omnifunc=csscomplete#CompleteCSS
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Set to auto read when a file is changed from the outside
@@ -75,7 +88,7 @@ set autoread
 nmap <silent> <c-n> :NERDTreeToggle<CR>
 
 "load NERDTree when vim starts
-"autocmdautocmd VimEnter * NERDTree
+autocmd VimEnter * NERDTree
 
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
@@ -85,6 +98,12 @@ let NERDTreeShowHidden=1
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 colorscheme solarized
 set background=dark
+
+
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+" Easily resize splits
+"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
+nmap <C-v> :vertical resize +5<cr>
 
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Key Mappings to switch tabs (apple key + NUM)
@@ -135,9 +154,21 @@ nnoremap <C-y> 3<C-y>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set visualbell
 
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-"  Fugitive git status line				      "
-"""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P
+" Powerline settings
+set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim "import powerline
+let g:Powerline_symbols = 'fancy'
+set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "fugitive status
 
+set laststatus=2 " always show the status line
+set encoding=utf-8 "Needed to show Unicode glyphs
+set noshowmode "Hide the default mode text (e.g. -- INSERT-- below the status line)
+
+
+" Laravel framework commons
+nmap <leader>lr :e app/routes.php<cr>
+nmap <leader>lca :e app/config/app.php<cr>81Gf(%O
+nmap <leader>lcd :e app/config/database.php<cr>
+nmap <leader>lc :e composer.json<cr>
+
+silent! call repeat#set("\<Plug>", v:count)
 
