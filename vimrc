@@ -40,20 +40,21 @@ let g:mapleader = ","
 "autochange directory to match current file <Leader>cd
 nnoremap <Leader>cd :cd %:p:h<CR>:pwd<CR>
 
-
 " Fonts
-set guifont=Menlo\ Regular:h14 "font menlo size 14
+"set guifont=Menlo\ Regular:h14 "font menlo size 14
+set guifont=Source\ Code\ Pro\ for\ Powerline:h14 "make sure to escape the spaces in the name properly
 set tw=500
 
 
 " Set 20 lines to the curors - when moving vertical..
-set so=20
+set so=15
 set nostartofline   " don't jump to first character when paging
 set title           " show title in console title bar
 set ruler	        "Always show current position
-set cmdheight=2     "The commandbar height
+set cmdheight=1     "The commandbar height
 set nohls        "Highlight search things
 set incsearch	"smarter search
+
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 " => Text, tab and indent related
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
@@ -62,9 +63,12 @@ set smarttab
 set tabstop=4
 set shiftwidth=4
 
-
 set copyindent "copies indentation
 set lbr
+
+nnoremap j gj
+nnoremap k gk
+imap  <Leader><Tab> <esc>
 
 set ai "Auto indent
 set si "Smart indet
@@ -88,7 +92,7 @@ set autoread
 nmap <silent> <c-n> :NERDTreeToggle<CR>
 
 "load NERDTree when vim starts
-autocmd VimEnter * NERDTree
+"autocmd VimEnter * NERDTree
 
 " Show hidden files in NERDTree
 let NERDTreeShowHidden=1
@@ -154,10 +158,8 @@ nnoremap <C-y> 3<C-y>
 """""""""""""""""""""""""""""""""""""""""""""""""""""""""""""""
 set visualbell
 
-" Powerline settings
-set rtp+=~/.vim/bundle/powerline/powerline/bindings/vim "import powerline
-let g:Powerline_symbols = 'fancy'
-set statusline=%<%f\ %h%m%r%{fugitive#statusline()}%=%-14.(%l,%c%V%)\ %P "fugitive status
+"Airline settings
+let g:airline_powerline_fonts = 1
 
 set laststatus=2 " always show the status line
 set encoding=utf-8 "Needed to show Unicode glyphs
@@ -169,6 +171,4 @@ nmap <leader>lr :e app/routes.php<cr>
 nmap <leader>lca :e app/config/app.php<cr>81Gf(%O
 nmap <leader>lcd :e app/config/database.php<cr>
 nmap <leader>lc :e composer.json<cr>
-
-silent! call repeat#set("\<Plug>", v:count)
 
